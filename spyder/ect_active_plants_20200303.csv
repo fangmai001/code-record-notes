@@ -1,0 +1,2 @@
+"plant_no","plant_alias","plant_name","capacity","project_status","longitude","latitude","city","county","plant_address","plant_address_no","on_grid_date","epc","om","spv","holding","updated_at","active","maintainer","fee_rate","agent"
+"ECTT0006","ECTT0006","民景企業股份有限公司（公館廠）",1282.38,NULL,120.876232,24.662574,"苗栗","頭份",NULL,NULL,"0000-00-00 00:00:00",NULL,"國軒",NULL,NULL,"2020-03-03 12:00:00","Y",NULL,0,"易謙科技"
