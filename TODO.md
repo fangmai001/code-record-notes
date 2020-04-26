@@ -1,2 +1,0 @@
-- 學 react.js 基礎
-    - 學 gitbook 使用
