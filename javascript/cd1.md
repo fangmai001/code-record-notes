@@ -1,4 +1,4 @@
-# 全域變數
+# Ch1. 宣告(Declare)
 
 ## 迴圈內的宣告(Declare variables on for loop)
 
