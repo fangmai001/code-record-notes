@@ -8,6 +8,11 @@
 //         return 'empty'
 //     }
 // }
-
 // console.log(a.ccc());
 
+// 甚麼是物件?
+const a = {
+    a: 20,
+}
+
+console.log(Object.prototype.toString.call(a.a));
