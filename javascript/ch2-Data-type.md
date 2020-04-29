@@ -8,7 +8,7 @@
 
 有趣的是 `null` 、 `array` 也是被分為object。至於 `null` 是不是基本資料型態，這問題好像是很大的爭議。
 
-#### 基本資料型態 (primitive data types)
+### 基本資料型態 (primitive data types)
 
 1. number
 2. boolean
@@ -17,7 +17,7 @@
 5. undefined
 6. object
 
-#### Object
+### Object
 
 1. null
 2. array
@@ -59,7 +59,7 @@ a.forEach(
 )
 ```
 
-## 檢查型態
+## 檢查型態方法
 
 ---
 
