@@ -59,6 +59,21 @@ a.forEach(
 
 ### Number
 
+#### 產生方法
+
+跟 `Java` 類似道理，能用基本資料型態來產生，也能用物件來產生。相對的，用基本資料型態產生的物件就屬基本資料型態，用物件產生就屬物件。
+
+```javascript
+let a = 25;
+let b = new Number(25);
+
+typeof a                            // "number"
+Object.prototype.toString.call(a)   // "[object Number]"
+
+typeof b                            // "object"
+Object.prototype.toString.call(b)   // "[object Number]"
+```
+
 #### 範圍
 
 範圍：`2^53-1`  
@@ -81,10 +96,6 @@ Number("0o11")    // 9
 Number("foo")     // NaN
 Number("100a")    // NaN
 ```
-
-#### 參考資源
-
-[前端工程研究：關於 JavaScript 中 Number 型別的常見地雷與建議作法](https://blog.miniasp.com/post/2020/02/21/JavaScript-Numbers-Deep-Dive)
 
 ### Boolean
 
@@ -151,19 +162,27 @@ console.log(b, typeof b); // [object Number] string
 
 ## 3. 宣告的作用域(Scope)
 
-- 區塊作用域(Block scope)
-  - 在區域內存在，如：if, for...
+- 屬於區塊作用域(Block scope)
+  - 只能在區域內存在，離開區域內就無法呼叫變數，如：if, for...
   - 宣告：let, const
 - 函式作用域(Function scope)
   - 在函式內存在，如：function
   - 宣告：var
 
-### 宣告方法 const
+## 4. 宣告方法
+
+### const
 
 - 常數，不能變更
 - 通常用於宣告物件
 
-### 宣告方法 let
+### let
 
 - 變數，可以改
 - 通常用於常常需要改的數字，或是暫時要用的數字
+
+## 參考資源
+
+[Mozillz 對標準內建物件的說明](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects)
+
+[前端工程研究：關於 JavaScript 中 Number 型別的常見地雷與建議作法](https://blog.miniasp.com/post/2020/02/21/JavaScript-Numbers-Deep-Dive)
