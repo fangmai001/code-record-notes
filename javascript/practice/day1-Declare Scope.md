@@ -1,4 +1,4 @@
-# Ch1. 宣告(Declare)
+# Day1. 宣告作用域(Declare Scope)
 
 ## 1. 迴圈內的宣告(Declare variables on for loop)
 
@@ -59,25 +59,3 @@ console.log(d);     // hi
 
 ---
 
-## 3. 宣告的作用域(Scope)
-
-- 區塊作用域(Block scope)
-  - 在區域內存在，如：if, for...
-  - 宣告：let, const
-- 函式作用域(Function scope)
-  - 在函式內存在，如：function
-  - 宣告：var
-
----
-
-## 4. 宣告方法 const
-
-- 常數，不能變更
-- 通常用於宣告物件
-
----
-
-## 5. 宣告方法 let
-
-- 變數，可以改
-- 通常用於常常需要改的數字，或是暫時要用的數字

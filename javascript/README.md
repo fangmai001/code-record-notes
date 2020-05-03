@@ -11,6 +11,8 @@
   - <https://kdchang.gitbooks.io/react101/content/>
 - React - DOM界的彼方(繁中)
   - <https://eyesofkids.gitbooks.io/react-basic-zh-tw/content>
+- Big Boy Can Code
+  - <https://www.youtube.com/user/kuanhsuh/featured>
 
 ## 可以研究議題
 
