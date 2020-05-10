@@ -41,9 +41,3 @@ var a;
 console.log(a);
 a = 10;
 ```
-
-## 標準內建物件(Standard built-in objects)
-
-在 js 裡面，有些方法可以直接呼叫使用，如： `parseInt()`
-
-[Mozillz 對標準內建物件的說明](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects)
