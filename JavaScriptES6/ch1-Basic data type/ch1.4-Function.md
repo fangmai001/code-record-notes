@@ -63,3 +63,34 @@ const test = (a, b) => {
 ```javascript
 const test = (a, b) => "hey";
 ```
+
+## 其餘運算子(Rest Operator)
+
+如果不確定 function 的參數會有多少，可以用`...`加在參數前，就能包成陣列。
+
+```javascript
+const avgFunc = (...arr) => {
+  console.log(arr); // [1, 3, 5, 7, 9]
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(avgFunc(1, 3, 5, 7, 9)); // 5
+```
+
+## 展開運算子(Spread Operator)
+
+在導入 function 前，加上`...`在參數前，形同把陣列拆開成`1, 3, 5`。
+
+```javascript
+const func = (parm) => {
+  console.log(parm);
+};
+
+const arr = [1, 3, 5];
+func(...arr); // 1
+func(1, 3, 5); // 1
+```

@@ -1,4 +1,4 @@
-# ch1. 資料型態(Data Type)
+# ch1. 基本資料型態(Basic data type)
 
 ## 常見的資料型態
 

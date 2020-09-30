@@ -1,7 +1,21 @@
 # Method
 
-[說明文件MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array)
+[說明文件 MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array)
 [做得更好的整理](https://www.oxxostudio.tw/articles/201908/js-array.html)
+
+## 索引
+
+- 回傳 null
+  - forEach()
+- 回傳新的陣列
+- 回傳 boolean
+- 改變原始陣列
+
+- 常見資料結構運算
+  - push()
+  - pop()
+  - shift()
+  - unshift()
 
 ## forEach()
 
@@ -34,9 +48,9 @@ includes() 方法會判斷陣列是否包含特定的元素，並以此來回傳
 return Boolean
 
 ```javascript
-const pets = ['cat', 'dog', 'bat'];
+const pets = ["cat", "dog", "bat"];
 
-console.log(pets.includes('cat'));
+console.log(pets.includes("cat"));
 // expected output: true
 ```
 
@@ -103,9 +117,9 @@ indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，�
 return Number
 
 ```javascript
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
 
-console.log(beasts.indexOf('bison'));
+console.log(beasts.indexOf("bison"));
 // expected output: 1
 ```
 

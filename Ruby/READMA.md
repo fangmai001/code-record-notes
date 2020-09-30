@@ -1,51 +1,5 @@
 # 隨便記
 
-## Array
-
-只有最後一個變數，才會真正存進去。
-
-```ruby
-arr = ['s', 's', 's', 's', 's']
-
-temp = arr.map do |i|
-    i + 'a'
-    i + 'b'
-    'c'
-end
-
-p temp # ["c", "c", "c", "c", "c"]
-```
-
-## Hash
-
-each
-
-```ruby
-hash = {apple: "pen", pen: "pineapple"}
-
-hash.each do |key, value|
-    puts "Key: #{key}, Value: #{value}"
-end
-```
-
-each_key
-
-```ruby
-hash = {apple: "pen", pen: "pineapple"}
-
-hash.each_key do |key|
-    puts key
-end
-```
-
-each_value
-
-```ruby
-hash.each_value do |value|
-    puts value
-end
-```
-
 ## String
 
 each_char  
@@ -91,5 +45,3 @@ number 的 method。
     p i
 end
 ```
-
-
