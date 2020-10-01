@@ -1,4 +1,4 @@
-const arrA = [1, 3, 5];
-const arrB = ["a", "b", "c"];
-const arrNew = [...arrA, ...arrB]; // [1, 3, 5, "a", "b", "c"]
-console.log(arrNew);
+const arr = ["一", "二", "三", "四", "五"];
+arr.sort();
+
+console.log(arr); // ["一", "三", "二", "五", "四"]

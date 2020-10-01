@@ -5,22 +5,164 @@
 
 ## 索引
 
+- 不用建物件的方法
+  - isArray()
+- 改變原始陣列
+  - push(): 存項目到尾端
+  - pop(): 取尾端項目
+  - unshift(): 存項目到前端
+  - shift(): 取前端項目
 - 回傳 null
   - forEach()
 - 回傳新的陣列
 - 回傳 boolean
-- 改變原始陣列
 
 - 常見資料結構運算
-  - push()
-  - pop()
-  - shift()
-  - unshift()
+  - push(): 存項目到尾端
+  - pop(): 取尾端項目
+  - unshift(): 存項目到前端
+  - shift(): 取前端項目
+
+## 會改變原始陣列
+
+### push()
+
+增加項目到陣列
+return: 加入項目後的 length
+
+```javascript
+const arr = ["a", "b", "c"];
+
+const length = arr.push("d");
+console.log(length); // 4
+console.log(arr); // ["a", "b", "c", "d"]
+
+arr.push("d", "e", "f");
+console.log(arr); // ["a", "b", "c", "d", "d", "e", "f"]
+```
+
+### pop()
+
+取出陣列中最尾端的項目
+return: 最尾端的項目
+
+```javascript
+const arr = ["a", "b", "c"];
+
+const pop = arr.pop();
+console.log(pop); // "c"
+console.log(arr); // ["a", "b"]
+
+arr.pop();
+console.log(arr); // ["a"]
+```
+
+### shift()
+
+取出陣列中最前端的項目
+return: 最前端的項目
+
+```javascript
+const arr = ["a", "b", "c"];
+
+const shift = arr.shift();
+console.log(shift); // "a"
+console.log(arr); // ["b", "c"]
+
+arr.shift();
+console.log(arr); // ["c"]
+```
+
+### unshift()
+
+增加項目到陣列的最前端
+return: 加入項目後的 length
+
+```javascript
+const arr = ["a", "b", "c"];
+
+const unshift = arr.unshift("d");
+console.log(unshift); // 4
+console.log(arr); // ["d", "a", "b", "c"]
+
+arr.unshift("e", "f");
+console.log(arr); // ["e", "f", "d", "a", "b", "c"]
+```
+
+### splice()
+
+可以任意改變陣列項目的方法，可以新增或刪除
+param: 開始位置(Number), 刪除數目(Number), 要加入的項目(Object)
+return: 新的 `Array`，如果有項目被刪除，就會把那些刪除項目用 `Array` 包，如果沒有項目被刪，就回傳空 `Array` 。
+
+刪除 index 1 後，補上 "zzz" 。
+
+```javascript
+const arr = ["a", "b", "c"];
+const arrNew = arr.splice(1, 1, "zzz");
+
+console.log(arr); // ["a", "zzz", "c"]
+console.log(arrNew); // ["b"]
+```
+
+不會隔空新增項目
+
+```javascript
+const arr = ["a", "b", "c"];
+const arrNew = arr.splice(99, 0, "zzz");
+console.log(arr); // ["a", "b", "c", "zzz"]
+```
+
+### sort()
+
+針對陣列中的所有項目進行排序。
+預設是用 Unicode 的編碼位置進行排序。
+據說，該方法有些問題，不建議太依賴使用。
+param: 能定義排序原則的方法(compareFunction) `function`
+return: 排序好的 `Array`
+
+```javascript
+const arr = ["c", "b", "a"];
+const arrNew = arr.sort();
+
+console.log(arr); // ["a", "b", "c"]
+console.log(arrNew); // ["a", "b", "c"]
+```
+
+中文字無解，不會是用我們傳統認知的筆畫順序來排序。
+
+```javascript
+const arr = ["一", "二", "三", "四", "五"];
+arr.sort();
+
+console.log(arr); // ["一", "三", "二", "五", "四"]
+```
+
+## 會回傳新的陣列
+
+### concat()
+
+新陣列合併到原本陣列的尾端
+不會改變原陣列
+return: `Array`
+
+```javascript
+const arrA = [1, 3, 5];
+const arrB = ["a", "b", "c"];
+const arrC = ["e", "f"];
+const arrNewA = arrA.concat(arrB);
+const arrNewB = arrA.concat(arrB, arrC);
+console.log(arrNewA); // [1, 3, 5, "a", "b", "c"]
+console.log(arrNewB); // [1, 3, 5, "a", "b", "c", "e", "f"]
+console.log(arrA); // [1, 3, 5]
+```
+
+---
 
 ## forEach()
 
 forEach() 方法會將陣列內的每個元素，皆傳入並執行給定的函式一次。
-return undefined
+return: `undefined`
 
 ```javascript
 const arr = ["qwe", "asd", "asd"];
