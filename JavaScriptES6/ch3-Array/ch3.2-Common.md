@@ -1,4 +1,4 @@
-# ch3.1 常見應用(Common Application)
+# ch3.2 常見應用(Common Application)
 
 ## 合併陣列
 

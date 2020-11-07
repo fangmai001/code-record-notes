@@ -1,4 +1,4 @@
-# Method
+# ch3.1 方法(Method)
 
 [說明文件 MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array)
 [做得更好的整理](https://www.oxxostudio.tw/articles/201908/js-array.html)
@@ -12,9 +12,9 @@
   - pop(): 取尾端項目
   - unshift(): 存項目到前端
   - shift(): 取前端項目
+- 回傳新的陣列
 - 回傳 null
   - forEach()
-- 回傳新的陣列
 - 回傳 boolean
 
 - 常見資料結構運算
@@ -118,6 +118,8 @@ console.log(arr); // ["a", "b", "c", "zzz"]
 針對陣列中的所有項目進行排序。
 預設是用 Unicode 的編碼位置進行排序。
 據說，該方法有些問題，不建議太依賴使用。
+[聊聊 sort](https://medium.com/@realdennis/javascript-%E5%BE%9Earray%E7%9A%84sort%E6%96%B9%E6%B3%95-%E8%81%8A%E5%88%B0%E5%90%84%E5%AE%B6%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E5%AF%A6%E4%BD%9C%E7%AE%97%E6%B3%95-c23a335b1b80)
+
 param: 能定義排序原則的方法(compareFunction) `function`
 return: 排序好的 `Array`
 
@@ -130,6 +132,8 @@ console.log(arrNew); // ["a", "b", "c"]
 ```
 
 中文字無解，不會是用我們傳統認知的筆畫順序來排序。
+[實戰中的案例](https://blog.darkthread.net/blog/javascript-chinese-char-sorting/)
+[localeCompare](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
 ```javascript
 const arr = ["一", "二", "三", "四", "五"];
@@ -159,7 +163,9 @@ console.log(arrA); // [1, 3, 5]
 
 ---
 
-## forEach()
+## 回傳 null
+
+### forEach()
 
 forEach() 方法會將陣列內的每個元素，皆傳入並執行給定的函式一次。
 return: `undefined`
@@ -182,7 +188,7 @@ const newArr = arr.forEach((value, index, array) => {
 console.log(newArr); // undefined
 ```
 
-## 元素判斷
+## 回傳 boolean
 
 ### includes()
 
@@ -279,56 +285,6 @@ const newArr = arr.map((value, index, array) => {
   return value + "QQQQ";
 });
 console.log(newArr); // ["qweQQQQ", "asdQQQQ", "asdQQQQ"]
-```
-
-### splice()
-
-新增/交換/刪除元素
-
-[文件](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
-
-刪除指定位置
-
-```javascript
-const months = ["Jan", "March", "April", "June"];
-months.splice(0, 1);
-//  ["March", "April", "June"]
-```
-
-從索引 2 的位置開始，刪除 0 個元素並插入「drum」
-
-```javascript
-var myFish = ["angel", "clown", "mandarin", "sturgeon"];
-var removed = myFish.splice(2, 0, "drum");
-
-// myFish 為 ["angel", "clown", "drum", "mandarin", "sturgeon"]
-// removed 為 [], 沒有元素被刪除
-```
-
-從索引 3 的位置開始，刪除 1 個元素
-
-```javascript
-var myFish = ["angel", "clown", "drum", "mandarin", "sturgeon"];
-var removed = myFish.splice(3, 1);
-
-// removed 為 ["mandarin"]
-// myFish 為 ["angel", "clown", "drum", "sturgeon"]
-```
-
-### push()
-
-push() 方法會添加一個或多個元素至陣列的末端，並且回傳陣列的新長度。
-
-return Number
-
-```javascript
-const animals = ["pigs", "goats", "sheep"];
-
-const count = animals.push("cows");
-console.log(count);
-// expected output: 4
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows"]
 ```
 
 ## 特殊
