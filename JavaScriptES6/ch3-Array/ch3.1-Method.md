@@ -27,8 +27,10 @@
 
 ### push()
 
-增加項目到陣列
-return: 加入項目後的 length
+- param: nope?
+- return: 加入項目後的 length
+- 說明：
+  - 增加項目到陣列
 
 ```javascript
 const arr = ["a", "b", "c"];
@@ -43,8 +45,10 @@ console.log(arr); // ["a", "b", "c", "d", "d", "e", "f"]
 
 ### pop()
 
-取出陣列中最尾端的項目
-return: 最尾端的項目
+- param: nope?
+- return: 最尾端的項目
+- 說明：
+  - 取出陣列中最尾端的項目
 
 ```javascript
 const arr = ["a", "b", "c"];
@@ -59,8 +63,10 @@ console.log(arr); // ["a"]
 
 ### shift()
 
-取出陣列中最前端的項目
-return: 最前端的項目
+- param: nope?
+- return: 最前端的項目
+- 說明：
+  - 取出陣列中最前端的項目
 
 ```javascript
 const arr = ["a", "b", "c"];
@@ -75,8 +81,10 @@ console.log(arr); // ["c"]
 
 ### unshift()
 
-增加項目到陣列的最前端
-return: 加入項目後的 length
+- param: nope?
+- return: 加入項目後的 length
+- 說明：
+  - 增加項目到陣列的最前端
 
 ```javascript
 const arr = ["a", "b", "c"];
@@ -91,9 +99,11 @@ console.log(arr); // ["e", "f", "d", "a", "b", "c"]
 
 ### splice()
 
-可以任意改變陣列項目的方法，可以新增或刪除
+- param: nope?
+- return: 新的 `Array`，如果有項目被刪除，就會把那些刪除項目用 `Array` 包，如果沒有項目被刪，就回傳空 `Array` 。
+- 說明：
+  - 可以任意改變陣列項目的方法，可以新增或刪除
 param: 開始位置(Number), 刪除數目(Number), 要加入的項目(Object)
-return: 新的 `Array`，如果有項目被刪除，就會把那些刪除項目用 `Array` 包，如果沒有項目被刪，就回傳空 `Array` 。
 
 刪除 index 1 後，補上 "zzz" 。
 
@@ -113,15 +123,30 @@ const arrNew = arr.splice(99, 0, "zzz");
 console.log(arr); // ["a", "b", "c", "zzz"]
 ```
 
+### reverse()
+
+- param: `undefined`
+- return: `Array`
+- 說明：
+  - 逆轉後的陣列
+
+```javascript
+const arr = ["a", "b", "c"];
+const reverse = arr.reverse();
+
+console.log(reverse); // ["c", "b", "a"]
+console.log(arr); // ["c", "b", "a"]
+```
+
 ### sort()
 
-針對陣列中的所有項目進行排序。
-預設是用 Unicode 的編碼位置進行排序。
-據說，該方法有些問題，不建議太依賴使用。
-[聊聊 sort](https://medium.com/@realdennis/javascript-%E5%BE%9Earray%E7%9A%84sort%E6%96%B9%E6%B3%95-%E8%81%8A%E5%88%B0%E5%90%84%E5%AE%B6%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E5%AF%A6%E4%BD%9C%E7%AE%97%E6%B3%95-c23a335b1b80)
-
-param: 能定義排序原則的方法(compareFunction) `function`
-return: 排序好的 `Array`
+- param: 能定義排序原則的方法(compareFunction) `function`  
+- return: 排序好的 `Array`
+- 說明：
+  - 針對陣列中的所有項目進行排序。
+  - 預設是用 Unicode 的編碼位置進行排序。
+  - 據說，該方法有些問題，不建議太依賴使用。
+  - [聊聊 sort](https://medium.com/@realdennis/javascript-%E5%BE%9Earray%E7%9A%84sort%E6%96%B9%E6%B3%95-%E8%81%8A%E5%88%B0%E5%90%84%E5%AE%B6%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E5%AF%A6%E4%BD%9C%E7%AE%97%E6%B3%95-c23a335b1b80)
 
 ```javascript
 const arr = ["c", "b", "a"];
@@ -131,24 +156,47 @@ console.log(arr); // ["a", "b", "c"]
 console.log(arrNew); // ["a", "b", "c"]
 ```
 
-中文字無解，不會是用我們傳統認知的筆畫順序來排序。
-[實戰中的案例](https://blog.darkthread.net/blog/javascript-chinese-char-sorting/)
+自定義排序方法(compareFunction)
+
+```javascript
+const arr = [3, 0, 1, 2];
+
+arr.sort((a, b) => a - b);
+console.log(arr); // [0, 1, 2, 3]
+
+arr.sort((a, b) => b - a);
+console.log(arr); // [3, 2, 1, 0]
+```
+
+若中文字想按照筆畫排序，可以使用 `localeCompare` 。  
+[實戰中的案例](https://blog.darkthread.net/blog/javascript-chinese-char-sorting/)  
 [localeCompare](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
 ```javascript
-const arr = ["一", "二", "三", "四", "五"];
-arr.sort();
+const arr = ["甲", "乙", "丙", "丁", "戊"];
 
-console.log(arr); // ["一", "三", "二", "五", "四"]
+const compareFunction = (a, b) => {
+    return a.localeCompare(b, 'zh-Hant')
+}
+
+// 預設不會是傳統認知的筆劃排序
+arr.sort()
+console.log(arr) // ["丁", "丙", "乙", "戊", "甲"]
+
+// 設區域才會按筆畫排序
+arr.sort(compareFunction)
+console.log(arr) // ["乙", "丁", "丙", "戊", "甲"]
 ```
 
 ## 會回傳新的陣列
 
 ### concat()
 
-新陣列合併到原本陣列的尾端
-不會改變原陣列
-return: `Array`
+- param: `Array`
+- return: `Array`
+- 說明：
+  - 新陣列合併到原本陣列的尾端
+  - 不會改變原陣列
 
 ```javascript
 const arrA = [1, 3, 5];
@@ -159,6 +207,25 @@ const arrNewB = arrA.concat(arrB, arrC);
 console.log(arrNewA); // [1, 3, 5, "a", "b", "c"]
 console.log(arrNewB); // [1, 3, 5, "a", "b", "c", "e", "f"]
 console.log(arrA); // [1, 3, 5]
+```
+
+### map()
+
+- param: `function`
+- return: `Array`
+- 說明：
+  - 不會改變原陣列
+
+```javascript
+const arr = ["a", "b", "c"];
+
+const newArr = arr.map((value, index, oldArr) => {
+  return "Q" + value + "Q";
+});
+
+console.log(arr); // ["a", "b", "c"]
+console.log(newArr); // ["QaQ", "QbQ", "QcQ"]
+
 ```
 
 ---
@@ -269,22 +336,6 @@ const beasts = ["ant", "bison", "camel", "duck", "bison"];
 
 console.log(beasts.indexOf("bison"));
 // expected output: 1
-```
-
-## 元素調整
-
-### map()
-
-map() 方法會建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
-可以用於重新組合新陣列。
-return Array
-
-```javascript
-const arr = ["qwe", "asd", "asd"];
-const newArr = arr.map((value, index, array) => {
-  return value + "QQQQ";
-});
-console.log(newArr); // ["qweQQQQ", "asdQQQQ", "asdQQQQ"]
 ```
 
 ## 特殊
