@@ -144,9 +144,7 @@ console.log(arr); // ["c", "b", "a"]
 - return: 排序好的 `Array`
 - 說明：
   - 針對陣列中的所有項目進行排序。
-  - 預設是用 Unicode 的編碼位置進行排序。
-  - 據說，該方法有些問題，不建議太依賴使用。
-  - [聊聊 sort](https://medium.com/@realdennis/javascript-%E5%BE%9Earray%E7%9A%84sort%E6%96%B9%E6%B3%95-%E8%81%8A%E5%88%B0%E5%90%84%E5%AE%B6%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E5%AF%A6%E4%BD%9C%E7%AE%97%E6%B3%95-c23a335b1b80)
+  - 關於 compareFunction 可以到 ch3.2 常見應用(Common Application) 看看
 
 ```javascript
 const arr = ["c", "b", "a"];
@@ -156,37 +154,7 @@ console.log(arr); // ["a", "b", "c"]
 console.log(arrNew); // ["a", "b", "c"]
 ```
 
-自定義排序方法(compareFunction)
-
-```javascript
-const arr = [3, 0, 1, 2];
-
-arr.sort((a, b) => a - b);
-console.log(arr); // [0, 1, 2, 3]
-
-arr.sort((a, b) => b - a);
-console.log(arr); // [3, 2, 1, 0]
-```
-
-若中文字想按照筆畫排序，可以使用 `localeCompare` 。  
-[實戰中的案例](https://blog.darkthread.net/blog/javascript-chinese-char-sorting/)  
-[localeCompare](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
-
-```javascript
-const arr = ["甲", "乙", "丙", "丁", "戊"];
-
-const compareFunction = (a, b) => {
-    return a.localeCompare(b, 'zh-Hant')
-}
-
-// 預設不會是傳統認知的筆劃排序
-arr.sort()
-console.log(arr) // ["丁", "丙", "乙", "戊", "甲"]
-
-// 設區域才會按筆畫排序
-arr.sort(compareFunction)
-console.log(arr) // ["乙", "丁", "丙", "戊", "甲"]
-```
+### fill()
 
 ## 會回傳新的陣列
 
@@ -227,6 +195,8 @@ console.log(arr); // ["a", "b", "c"]
 console.log(newArr); // ["QaQ", "QbQ", "QcQ"]
 
 ```
+
+### copyWithin()
 
 ---
 

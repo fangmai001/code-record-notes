@@ -1,6 +1,13 @@
-const arr = ["a", "b", "c"];
+// const arr = ["a", "b", "c", "d", "e"];
 
-const reverse = arr.reverse();
+// // target, start, end
+// const methodReturn = arr.copyWithin(3);
 
-console.log(reverse); // ["c", "b", "a"]
-console.log(arr); // ["c", "b", "a"]
+// console.log(arr); // ["c", "b", "a"]
+// console.log(methodReturn); // ["c", "b", "a"]
+
+const arr = [];
+
+arr.length = 5;
+console.log(arr.fill(0));
+console.log(arr);
