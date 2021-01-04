@@ -8,14 +8,44 @@
 - 不用建物件的方法
   - isArray()
 - 改變原始陣列
-  - push(): 存項目到尾端
-  - pop(): 取尾端項目
-  - unshift(): 存項目到前端
-  - shift(): 取前端項目
+  - [push()](#push()): 存項目到尾端
+  - [pop()](#pop()): 取尾端項目
+  - [shift()](#shift()): 取前端項目
+  - [unshift()](#unshift()): 存項目到前端
+  - [splice()](#splice()): 替換項目
+  - [reverse()](#reverse()): 逆轉
+  - [sort()](#sort()): 排序
+  - fill(): !!! 未完成 !!!
 - 回傳新的陣列
+  - [concat()](#concat()): 陣列合併
+  - [map()](#map()): 項目修改
+  - copyWithin(): !!! 未完成 !!!
 - 回傳 null
-  - forEach()
+  - [forEach()](#forEach()): 項目走訪
 - 回傳 boolean
+  - [includes()](#includes()): 是否包含指定項目
+  - [every()](#every()): 是否「都」符合指定方法
+  - [some()](#some()): 是否「有」符合指定方法
+- 回傳 String
+  - toString()
+  - join()
+- 未完成
+  - filter()
+  - find()
+  - indexOf()
+  - reduce()
+  - findIndex()
+  - lastIndexOf()
+  - slice()
+  - reduce()
+  - reduceRight()
+  - flat()
+  - flatMap()
+  - Array.from()
+  - Array.of()
+  - Array.isArray()
+  - keys()
+  - valueOf()
 
 - 常見資料結構運算
   - push(): 存項目到尾端
@@ -27,7 +57,7 @@
 
 ### push()
 
-- param: nope?
+- param: 任何
 - return: 加入項目後的 length
 - 說明：
   - 增加項目到陣列
@@ -45,7 +75,7 @@ console.log(arr); // ["a", "b", "c", "d", "d", "e", "f"]
 
 ### pop()
 
-- param: nope?
+- param: undefined?
 - return: 最尾端的項目
 - 說明：
   - 取出陣列中最尾端的項目
@@ -63,7 +93,7 @@ console.log(arr); // ["a"]
 
 ### shift()
 
-- param: nope?
+- param: undefined?
 - return: 最前端的項目
 - 說明：
   - 取出陣列中最前端的項目
@@ -81,7 +111,7 @@ console.log(arr); // ["c"]
 
 ### unshift()
 
-- param: nope?
+- param: 任何
 - return: 加入項目後的 length
 - 說明：
   - 增加項目到陣列的最前端
@@ -99,15 +129,13 @@ console.log(arr); // ["e", "f", "d", "a", "b", "c"]
 
 ### splice()
 
-- param: nope?
+- param: 開始位置(Number), 刪除數目(Number), 要加入的項目(Object)
 - return: 新的 `Array`，如果有項目被刪除，就會把那些刪除項目用 `Array` 包，如果沒有項目被刪，就回傳空 `Array` 。
 - 說明：
   - 可以任意改變陣列項目的方法，可以新增或刪除
-param: 開始位置(Number), 刪除數目(Number), 要加入的項目(Object)
-
-刪除 index 1 後，補上 "zzz" 。
 
 ```javascript
+// 刪除 index 1 後，補上 "zzz" 。
 const arr = ["a", "b", "c"];
 const arrNew = arr.splice(1, 1, "zzz");
 
@@ -115,9 +143,8 @@ console.log(arr); // ["a", "zzz", "c"]
 console.log(arrNew); // ["b"]
 ```
 
-不會隔空新增項目
-
 ```javascript
+// 不會隔空新增項目
 const arr = ["a", "b", "c"];
 const arrNew = arr.splice(99, 0, "zzz");
 console.log(arr); // ["a", "b", "c", "zzz"]
@@ -125,8 +152,8 @@ console.log(arr); // ["a", "b", "c", "zzz"]
 
 ### reverse()
 
-- param: `undefined`
-- return: `Array`
+- param: undefined
+- return: 新的 Array 。
 - 說明：
   - 逆轉後的陣列
 
@@ -140,8 +167,8 @@ console.log(arr); // ["c", "b", "a"]
 
 ### sort()
 
-- param: 能定義排序原則的方法(compareFunction) `function`  
-- return: 排序好的 `Array`
+- param: 能定義排序原則(compareFunction)的 function 。
+- return: 排序好的 Array 。
 - 說明：
   - 針對陣列中的所有項目進行排序。
   - 關於 compareFunction 可以到 ch3.2 常見應用(Common Application) 看看
@@ -156,12 +183,16 @@ console.log(arrNew); // ["a", "b", "c"]
 
 ### fill()
 
+<!-- !!!!!! -->
+<!-- TODO -->
+<!-- !!!!!! -->
+
 ## 會回傳新的陣列
 
 ### concat()
 
-- param: `Array`
-- return: `Array`
+- param: 多個 Array ，或說 「`*Array`」。
+- return: 新的 Array 。
 - 說明：
   - 新陣列合併到原本陣列的尾端
   - 不會改變原陣列
